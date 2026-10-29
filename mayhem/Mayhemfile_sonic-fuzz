@@ -1,0 +1,10 @@
+project: savantenvs/sonic
+target: sonic-fuzz
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/sonic-fuzz/testsuite
+cmds:
+  - cmd: /mayhem/sonic-fuzz @@ /dev/null
+    afl: true
+    max_length: 5000000
+    timeout: 10

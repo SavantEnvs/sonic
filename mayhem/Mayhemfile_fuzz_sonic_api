@@ -1,0 +1,9 @@
+project: savantenvs/sonic
+target: fuzz_sonic_api
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_sonic_api/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_sonic_api
+    libfuzzer: true
+    timeout: 5
